@@ -10,7 +10,7 @@ const fullname = ref("");
 
 watchEffect(() => {
     fullname.value = `${formData.firstname} ${formData.lastname}`;
-    console.log('fullname.value : ',fullname.value)
+    // console.log('fullname.value : ',fullname.value)
   }
 );
 </script>
