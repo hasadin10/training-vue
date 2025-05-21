@@ -68,18 +68,24 @@ onMounted(() => {
     </div>
     <div class="form-row">
       <label>Firstname:</label>
-      <input type="text" v-model="Firstname" />
-      <div>{{ error.Firstname }}</div>
+      <div class="input-group">
+        <input type="text" v-model="Firstname" />
+        <div class="error-message">{{ error.Firstname }}</div>
+      </div>
     </div>
     <div class="form-row">
       <label>Lastname:</label>
-      <input type="text" v-model="Lastname" />
-      <div>{{ error.Lastname }}</div>
+      <div class="input-group">
+        <input type="text" v-model="Lastname" />
+        <div class="error-message">{{ error.Lastname }}</div>
+      </div>
     </div>
     <div class="form-row">
       <label>Email:</label>
-      <input type="text" v-model="Email" />
-      <div>{{ error.Email }}</div>
+      <div class="input-group">
+        <input type="text" v-model="Email" />
+        <div class="error-message">{{ error.Email }}</div>
+      </div>
     </div>
     <div v-if="isLoading" class="loading">loading...</div>
     <button :disabled="!isValid" class="button" @click="updateProfile()">
@@ -156,5 +162,13 @@ input {
   margin-left: 4px;
   line-height: 1.2;
   font-weight: 400;
+  white-space: normal; /* ยอมให้ขึ้นบรรทัดใหม่ */
+  word-break: break-word; /* ตัดคำเมื่อยาวเกิน */
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 </style>
